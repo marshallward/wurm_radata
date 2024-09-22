@@ -1,0 +1,38 @@
+1.3.1.0
+Wurm: Journey to the Center of the Earth
+N0:0x000b:"Level \"window\" position?\r\n(Only left-right; up/down selects a new stage)"
+N0:0x000d:"[8-bit] Scene Type\r\n\r\n0x00 = Interactive (HSS/VSS/CSRP/SARP)\r\n0x01 = Cutscene\r\n0x02 = Dialogue Monitor\r\n0x06 = Title Card\r\n"
+N0:0x0012:"Level \"window\"?\r\nSimilar but different from 0xa-b"
+N0:0x002f:"X pos (sort of?)"
+N0:0x0030:"Y pos?"
+N0:0x0031:"Maybe X??"
+N0:0x0033:"Facing (0=right, 1=left)"
+N0:0x0034:"Level select?\r\n\r\n(Not exacty, more like 1/256 chance of being nonzero)"
+N0:0x003f:"NoMove"
+N0:0x0040:"NoMove"
+N0:0x0041:"VZR Sprite State:\r\n\r\n0F: T, Flat, Static\r\n1F: T, Down, Static\r\n17: T, Up, Static\r\n27: T, Flat, Moving\r\n3B: T, Down, Moving\r\n31: T, Up, Moving\r\n\r\n12: T, Flat, Static, Drill\r\n2C: T, Flat, Moving, Drill\r\n\r\n48: Hover mode (move or no move)\r\n\r\n5C: T to H\r\n6A: H to T\r\n63: H to A\r\n7A: A to H"
+N0:0x0043:"NoMove (0 to 1)"
+N0:0x0044:"State?\r\n06 = drill move back\r\n16 = stand\r\n18 = kick\r\n19 = jump\r\n1c = duck\r\n1e = run"
+N0:0x0045:"Move State? (0 or 6)"
+N0:0x0046:"NoMove (0 or 6)"
+N0:0x00c8:"Fuel/Gun (lower byte)"
+N0:0x00c9:"Fuel/Gun (upper byte)"
+N0:0x00ca:"Shield / Life"
+N0:0x0307:"Player Bullet 6"
+N0:0x0308:"Player Bullet 5"
+N0:0x0309:"Player Bullet 4"
+N0:0x030a:"Player Bullet 3"
+N0:0x030b:"Player Bullet 2"
+N0:0x030c:"Player Bullet 1\r\n\r\nSet to 0x85 when fired, but then cycles back to 0x00 (after a time I presume).\r\n\r\nA bit of a list: If 1 is occupied then the next is \"fired\".  Six shots must be the max.\r\n\r\nChanges can indicate number of shots (after dividing by two)"
+N0:0x04e5:"Fuel\r\n(May just be the graphic counter, not actual fuel)"
+N0:0x04f1:"Possibility / 100"
+N0:0x04f2:"Possibility / 10\r\n\r\nThis is the \"upper byte\".  It stores multiples of 10, with an 0x80 offset.\r\n\r\nSo if the possibility is 27, then this is 0x82.  (And the lower is 0x87).\r\n\r\nOddly, if the number is from 0 to 9, then this is zero, not 0x80.  Not yet sure why."
+N0:0x04f3:"[8-bit] Possibility (mod 10)\r\n\r\nThis is the \"lower byte\", except it is some kind of decimal form.  0x80 to 0x89.  Anything higher than 10 is stored in 0x04f2"
+N0:0x05e9:"Some Counter..."
+111000001:"0xH00d0=2_0xH00d2=1_0xH00b3=0_0xH04f0=75_0xH04f1=129_0xH04f2=128_0xH04f3=128_0xH0306<3":Behold the Bemul:Talk with your team to discover the weakness of the Bemul, then defeat it.::::marshallward:5:::::00000
+111000002:"0xH00d0=2_0xH00d2=5_0xH00b3=0_0xH04f0=93_0xH04f1=129_0xH04f2=128_0xH04f3=128_0xH0306<3":Roll Anrock:Talk with your team to discover the weakness of Anrock, then defeat it.:::::5:::::00000
+111000004:"0xH000d=1_0xH0064=7_0xH00b3=0_0xH00d0=4_0xH00d2=2":The Droid with the Custom CPU:Defeat Zolda, and then reactivate the G-13 robot.:::::5:::::00000
+111000007:"0xH000d=1_0xN0064=1_0xO0064=1_0xP0064=1_0xH00b3=0_0xH00d0=4_0xH00d2=6":Free the Princess:Defeat Zolda again, and recruit Diane:::::5:::::00000
+111000009:"0xH000d=0_0xN0064=1_0xO0064=0_0xP0064=1_0xH00b3=0_0xH00d0=3_0xH00d2=6_0xH0306=255":Zolda's Last Stand:Kill Zolda in your final battle.  You must score at least 16 hits before he escapes.:::::10:::::00000
+111000010:"0xH00d0=2_0xH00d2=9_0xH00b3=0_0xH04f0=111_0xH04f1=129_0xH04f2=128_0xH04f3=128_O:0xH0306<3_0xH0306=255":Zalta vs Vazolder:Talk with your team to discover the weakness of Zalta, then defeat it.:::::5:::::00000
+111000012:"0xH000d=2_0xM0064=1_0xH00b3=0_0xH00d0=3_0xH00d2=10_0xH00ca=20":Kung Fu Spelunker:Traverse the Magma Cave and rescue Silvia without taking any damage.:::::5:::::00000
