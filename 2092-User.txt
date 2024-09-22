@@ -35,4 +35,4 @@ N0:0x05e9:"Some Counter..."
 111000007:"0xH000d=1_0xN0064=1_0xO0064=1_0xP0064=1_0xH00b3=0_0xH00d0=4_0xH00d2=6":Free the Princess:Defeat Zolda again, and recruit Diane:::::5:::::00000
 111000009:"0xH000d=0_0xN0064=1_0xO0064=0_0xP0064=1_0xH00b3=0_0xH00d0=3_0xH00d2=6_0xH0306=255":Zolda's Last Stand:Kill Zolda in your final battle.  You must score at least 16 hits before he escapes.:::::10:::::00000
 111000010:"0xH00d0=2_0xH00d2=9_0xH00b3=0_0xH04f0=111_0xH04f1=129_0xH04f2=128_0xH04f3=128_O:0xH0306<3_0xH0306=255":Zalta vs Vazolder:Talk with your team to discover the weakness of Zalta, then defeat it.:::::5:::::00000
-111000012:"0xH000d=2_0xM0064=1_0xH00b3=0_0xH00d0=3_0xH00d2=10_0xH00ca=20":Kung Fu Spelunker:Traverse the Magma Cave and rescue Silvia without taking any damage.:::::5:::::00000
+111000012:"R:0xH00d2!=10_R:0xH00ca<d0xH00ca_P:0xH00b3!=0_0x 00d5=17.1._N:0xH000d=2_T:0xM0064=1":Master Spelunker:Traverse the Magma Cave and rescue Silvia without taking any damage.:::::5:::::00000
