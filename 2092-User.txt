@@ -29,10 +29,11 @@ N0:0x04f1:"Possibility / 100"
 N0:0x04f2:"Possibility / 10\r\n\r\nThis is the \"upper byte\".  It stores multiples of 10, with an 0x80 offset.\r\n\r\nSo if the possibility is 27, then this is 0x82.  (And the lower is 0x87).\r\n\r\nOddly, if the number is from 0 to 9, then this is zero, not 0x80.  Not yet sure why."
 N0:0x04f3:"[8-bit] Possibility (mod 10)\r\n\r\nThis is the \"lower byte\", except it is some kind of decimal form.  0x80 to 0x89.  Anything higher than 10 is stored in 0x04f2"
 N0:0x05e9:"Some Counter..."
-111000001:"0xH00d0=2_0xH00d2=1_0xH00b3=0_0xH04f0=75_0xH04f1=129_0xH04f2=128_0xH04f3=128_0xH0306<3":Behold the Bemul:Talk with your team to discover the weakness of the Bemul, then defeat it.::::marshallward:5:::::00000
-111000002:"0xH00d0=2_0xH00d2=5_0xH00b3=0_0xH04f0=93_0xH04f1=129_0xH04f2=128_0xH04f3=128_0xH0306<3":Roll Anrock:Talk with your team to discover the weakness of Anrock, then defeat it.:::::5:::::00000
-111000004:"0xH000d=1_0xH0064=7_0xH00b3=0_0xH00d0=4_0xH00d2=2":The Droid with the Custom CPU:Defeat Zolda, and then reactivate the G-13 robot.:::::5:::::00000
-111000007:"0xH000d=1_0xN0064=1_0xO0064=1_0xP0064=1_0xH00b3=0_0xH00d0=4_0xH00d2=6":Free the Princess:Defeat Zolda again, and recruit Diane:::::5:::::00000
-111000009:"0xH000d=0_0xN0064=1_0xO0064=0_0xP0064=1_0xH00b3=0_0xH00d0=3_0xH00d2=6_0xH0306=255":Zolda's Last Stand:Kill Zolda in your final battle.  You must score at least 16 hits before he escapes.:::::10:::::00000
-111000010:"0xH00d0=2_0xH00d2=9_0xH00b3=0_0xH04f0=111_0xH04f1=129_0xH04f2=128_0xH04f3=128_O:0xH0306<3_0xH0306=255":Zalta vs Vazolder:Talk with your team to discover the weakness of Zalta, then defeat it.:::::5:::::00000
-111000012:"R:0xH00d2!=10_R:0xH00ca<d0xH00ca_P:0xH00b3!=0_0x 00d5=17.1._N:0xH000d=2_T:0xM0064=1":Master Spelunker:Traverse the Magma Cave and rescue Silvia without taking any damage.:::::5:::::00000
+111000014:"R:0xH00d2!=0_P:0xH00b3!=0_0xH00d0=0.1._0x 00d5=17.1._N:0xH00de>1_R:0x 00d5>=96_N:0xH00de>1_R:0x 00d5<=80.1._T:0x 00d5=254.1.":Way of the Drill:Complete the first VRZ level using only the T-form.  You may only use the H-form to reach the passage atop the canyon.::::marshallward:0:::::00000
+111000013:"R:0xH00d2!=1_P:0xH00b3!=0_0xH00d0=2.1._0xH04f0=75.1._N:0xH0370=129.1._B:3_T:0xH0306>128":Behold the Bemul:Talk with your team and discover the weakness of the Bemul, then defeat it.:::missable::5:::::00000
+111000004:"0xH000d=1_0xH0064=7_0xH00b3=0_0xH00d0=4_0xH00d2=2":The Droid with the Custom CPU:Defeat Zolda, and then reactivate the G-13 robot.:::progression::5:::::00000
+111000002:"0xH00d0=2_0xH00d2=5_0xH00b3=0_0xH04f0=93_0xH04f1=129_0xH04f2=128_0xH04f3=128_0xH0306<3":Roll Anrock:Talk with your team and discover the weakness of Anrock, then defeat it.:::missable::5:::::00000
+111000007:"0xH000d=1_0xN0064=1_0xO0064=1_0xP0064=1_0xH00b3=0_0xH00d0=4_0xH00d2=6":The Legend of Zolda:Defeat Zolda again, and recruit Diane:::progression::5:::::00000
+111000009:"0xH000d=0_0xN0064=1_0xO0064=0_0xP0064=1_0xH00b3=0_0xH00d0=3_0xH00d2=6_0xH0306=255":Zolda's Last Stand:Kill Zolda in your final battle.  You must score at least 16 hits before he escapes.:::missable::10:::::00000
+111000010:"0xH00d0=2_0xH00d2=9_0xH00b3=0_0xH04f0=111_0xH04f1=129_0xH04f2=128_0xH04f3=128_O:0xH0306<3_0xH0306=255":Zalta vs Vazolder:Talk with your team and discover the weakness of Zalta, then defeat it.:::missable::5:::::00000
+111000012:"R:0xH00d2!=10_R:0xH00ca<d0xH00ca_P:0xH00b3!=0_0x 00d5=17.1._N:0xH000d=2_T:0xM0064=1":Master Spelunker:Traverse the Magma Cave and rescue Silvia without taking any damage.:::missable::5:::::00000
