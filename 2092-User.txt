@@ -1,6 +1,5 @@
 1.3.1.0
 Wurm: Journey to the Center of the Earth
-N0:0x000b:"Level \"window\" position?\r\n(Only left-right; up/down selects a new stage)"
 N0:0x000d:"[8-bit] Scene Type\r\n\r\n0x00 = Interactive (HSS/VSS/CSRP/SARP)\r\n0x01 = Cutscene\r\n0x02 = Dialogue Monitor\r\n0x06 = Title Card\r\n"
 N0:0x0012:"Level \"window\"?\r\nSimilar but different from 0xa-b"
 N0:0x002f:"X pos (sort of?)"
@@ -17,7 +16,7 @@ N0:0x0045:"Move State? (0 or 6)"
 N0:0x0046:"NoMove (0 or 6)"
 N0:0x00c8:"Fuel/Gun (lower byte)"
 N0:0x00c9:"Fuel/Gun (upper byte)"
-N0:0x00ca:"Shield / Life"
+N0:0x00ca:"[8-bit] Shield / Life"
 N0:0x0307:"Player Bullet 6"
 N0:0x0308:"Player Bullet 5"
 N0:0x0309:"Player Bullet 4"
@@ -29,11 +28,12 @@ N0:0x04f1:"Possibility / 100"
 N0:0x04f2:"Possibility / 10\r\n\r\nThis is the \"upper byte\".  It stores multiples of 10, with an 0x80 offset.\r\n\r\nSo if the possibility is 27, then this is 0x82.  (And the lower is 0x87).\r\n\r\nOddly, if the number is from 0 to 9, then this is zero, not 0x80.  Not yet sure why."
 N0:0x04f3:"[8-bit] Possibility (mod 10)\r\n\r\nThis is the \"lower byte\", except it is some kind of decimal form.  0x80 to 0x89.  Anything higher than 10 is stored in 0x04f2"
 N0:0x05e9:"Some Counter..."
-111000014:"R:0xH00d2!=0_P:0xH00b3!=0_0xH00d0=0.1._0x 00d5=17.1._N:0xH00de>1_R:0x 00d5>=96_N:0xH00de>1_R:0x 00d5<=80.1._T:0x 00d5=254.1.":Way of the Drill:Complete the first VRZ level using only the T-form.  You may only use the H-form to reach the passage atop the canyon.::::marshallward:0:::::00000
-111000013:"R:0xH00d2!=1_P:0xH00b3!=0_0xH00d0=2.1._0xH04f0=75.1._N:0xH0370=129.1._B:3_T:0xH0306>128":Behold the Bemul:Talk with your team and discover the weakness of the Bemul, then defeat it.:::missable::5:::::00000
-111000004:"0xH000d=1_0xH0064=7_0xH00b3=0_0xH00d0=4_0xH00d2=2":The Droid with the Custom CPU:Defeat Zolda, and then reactivate the G-13 robot.:::progression::5:::::00000
-111000002:"0xH00d0=2_0xH00d2=5_0xH00b3=0_0xH04f0=93_0xH04f1=129_0xH04f2=128_0xH04f3=128_0xH0306<3":Roll Anrock:Talk with your team and discover the weakness of Anrock, then defeat it.:::missable::5:::::00000
-111000007:"0xH000d=1_0xN0064=1_0xO0064=1_0xP0064=1_0xH00b3=0_0xH00d0=4_0xH00d2=6":The Legend of Zolda:Defeat Zolda again, and recruit Diane:::progression::5:::::00000
-111000009:"0xH000d=0_0xN0064=1_0xO0064=0_0xP0064=1_0xH00b3=0_0xH00d0=3_0xH00d2=6_0xH0306=255":Zolda's Last Stand:Kill Zolda in your final battle.  You must score at least 16 hits before he escapes.:::missable::10:::::00000
-111000010:"0xH00d0=2_0xH00d2=9_0xH00b3=0_0xH04f0=111_0xH04f1=129_0xH04f2=128_0xH04f3=128_O:0xH0306<3_0xH0306=255":Zalta vs Vazolder:Talk with your team and discover the weakness of Zalta, then defeat it.:::missable::5:::::00000
+111000014:"R:0xH00d2!=0_R:0xH00b3!=0_0x 00d5=17.1._N:0xH00de>1_R:0x 00d5>=96_N:0xH00de>1_R:0x 00d5<=80_T:0x 00d5=254.1.":Way of the Drill:Complete the first VRZ level using only the T-form.  You may only use the H-form to reach the passage atop the canyon.::::marshallward:5:::::00000
+111000013:"R:0xH00d2!=1_R:0xH00b3!=0_0xH04f0=75.1._N:0xH0370=129.1._B:3_T:0xH0306>128":Behold the Bemul:Talk with your team and discover the weakness of the Bemul, then defeat it.:::::5:::::00000
+111000015:"R:0xH00d2!=1_R:0xH00b3!=0_R:0xH04f0!=15.1._R:0xH00ca<20_N:0xH0370=129.1._B:3_T:0xH0306>128":Eye of the Bemulder:Defeat the Bemulder without any support from your team, and without taking any damage.  (Press Select to skip the Dialogue section.)::::marshallward:10:::::00000
+111000004:"R:0xH00d2!=2_R:0xH00b3!=0_0xH000d=1_0xH00d0=4_T:0xH0064=7.1.":The Droid with the Custom CPU:Defeat Zolda, and then reactivate the G-13 robot.:::progression::5:::::00000
+111000002:"R:0xH00d2!=5_0xH00d0=2_0xH00b3=0_0xH04f0=93_0xH04f1=129_0xH04f2=128_0xH04f3=128_0xH0306<3":Roll Anrock:Talk with your team and discover the weakness of Anrock, then defeat it.:::::5:::::00000
+111000007:"R:0xH00d2!=6_0xH000d=1_0xN0064=1_0xO0064=1_0xP0064=1_0xH00b3=0_0xH00d0=4":The Legend of Zolda:Defeat Zolda again, and recruit Diane:::progression::5:::::00000
+111000009:"R:0xH00d2!=6_0xH000d=0_0xN0064=1_0xO0064=0_0xP0064=1_0xH00b3=0_0xH00d0=3_0xH0306=255":Zolda's Last Stand:Kill Zolda in your final battle.  You must score at least 16 hits before he escapes.:::missable::10:::::00000
+111000010:"R:0xH00d2!=9_0xH00d0=2_0xH00b3=0_0xH04f0=111_0xH04f1=129_0xH04f2=128_0xH04f3=128_O:0xH0306<3_0xH0306=255":Zalta vs Vazolder:Talk with your team and discover the weakness of Zalta, then defeat it.:::missable::5:::::00000
 111000012:"R:0xH00d2!=10_R:0xH00ca<d0xH00ca_P:0xH00b3!=0_0x 00d5=17.1._N:0xH000d=2_T:0xM0064=1":Master Spelunker:Traverse the Magma Cave and rescue Silvia without taking any damage.:::missable::5:::::00000
