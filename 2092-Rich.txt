@@ -57,7 +57,7 @@ Lookup:Scene
 // Act 5
 15=in the Dilenium Mines
 16=in the Volcanic City
-17=is fighting the VZR-5
+17=in the Volcanic City
 18=in the Underworld Empire
 19=near the Statue of Dyna
 
