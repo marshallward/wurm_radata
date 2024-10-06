@@ -26,15 +26,19 @@ N0:0x04e5:"Fuel\r\n(May just be the graphic counter, not actual fuel)"
 N0:0x04f1:"Possibility / 100"
 N0:0x04f2:"Possibility / 10\r\n\r\nThis is the \"upper byte\".  It stores multiples of 10, with an 0x80 offset.\r\n\r\nSo if the possibility is 27, then this is 0x82.  (And the lower is 0x87).\r\n\r\nOddly, if the number is from 0 to 9, then this is zero, not 0x80.  Not yet sure why."
 N0:0x04f3:"[8-bit] Possibility (mod 10)\r\n\r\nThis is the \"lower byte\", except it is some kind of decimal form.  0x80 to 0x89.  Anything higher than 10 is stored in 0x04f2"
-N0:0x05e9:"Some Counter..."
 N0:0x0780:"Enemy Sprite Position?\r\n\r\nVERY unsure about this, but it's 0xf8 if there are no enemies on screen..."
 111000014:"R:0xH00d2!=0_R:0xH00b3!=0_0x 00d5=17.1._N:0xH00de>1_R:0x 00d5>=96_N:0xH00de>1_R:0x 00d5<=80_N:d0x 00d5<0x 00fe.1._T:0x 00d5=254.1.":Way of the Drill:Complete the first VRZ level using only the T-form.  You may only use the H-form to reach the passage atop the canyon.::::marshallward:5:::::00000
 111000013:"R:0xH00d2!=1_R:0xH00b3!=0_R:0xH0035=7_0xH0035=3.1._N:0xH04f0=75.1._N:0xH0370=129.1._B:3_T:0xH0306>128.1.":Behold the Bemul:Talk with your team and discover the weakness of the Bemul, then defeat it.:::::5:::::00000
 111000015:"R:0xH00d2!=1_R:0xH00b3!=0_R:0xH0035=7_R:0xH04f0!=15_R:0xH00ca<20_0xH0035=3.1._N:0xH0370=129.1._B:3_T:0xH0306>128":Eye of the Bemulder:Defeat the Bemulder without any support from your team, and without taking any damage.  (Press Select to skip the Dialogue section.)::::marshallward:10:::::00000
 111000004:"R:0xH00d2!=2_R:0xH00b3!=0_R:0xH0035=7_N:0xH0064=7.1._N:d0xH000d>0.1._T:0xH000d=0":The Bot with the Custom CPU:Defeat Zolda, and then reactivate the G-13 robot.:::progression::5:::::00000
 111000002:"R:0xH00d2!=5_R:0xH00b3!=0_R:0xH0035=7_0xH0035=3.1._N:0xH04f0=93.1._N:0xH0370=129.1._B:3_T:0xH0306>128.1.":Anrock to rock, dust to dust:Talk with your team and discover the weakness of Anrock, then defeat it.:::::5:::::00000
-111000007:"R:0xH00d2!=6_R:0xH00b3!=0_N:0xN0064=1_N:0xO0064=1_N:0xP0064=1_N:d0xH000d>0.1._T:0xH000d=0":The Legend of Zolda:Defeat Zolda again, and recruit Diane:::progression::5:::::00000
-111000009:"R:0xH00d2!=6_R:0xH00b3!=0_R:0xH0780=248_0xN0064=1.1._N:d0xH0306<=16_T:0xH0306>128":Zolda's Last Stand:Kill Zolda in your final battle before he escapes.  You must score at least 16 hits before he escapes.:::missable::10:::::00000
+111000007:"R:0xH00d2!=6_R:0xH00b3!=0_R:0xH0035=7_N:0xN0064=1_N:0xO0064=1_N:0xP0064=1_N:d0xH000d>0.1._T:0xH000d=0":The Legend of Zolda:Defeat Zolda again, and recruit Diane:::progression::5:::::00000
+111000009:"R:0xH00d2!=6_R:0xH00b3!=0_R:d0xH0356=255_0xN0064=1.1._N:d0xH0306<=16_T:0xH0306>128":Zolda's Last Stand:Kill Zolda in your final battle before he escapes.  You must score at least 16 hits before he escapes.:::missable::10:::::00000
 111000010:"R:0xH00d2!=9_0xH00d0=2_0xH00b3=0_0xH04f0=111_0xH04f1=129_0xH04f2=128_0xH04f3=128_O:0xH0306<3_0xH0306=255":Zalta vs Vazolder:Talk with your team and discover the weakness of Zalta, then defeat it.:::missable::5:::::00000
-111000012:"R:0xH00d2!=10_R:0xH00ca<d0xH00ca_P:0xH00b3!=0_0x 00d5=17.1._N:0xH000d=2_T:0xM0064=1":Master Spelunker:Traverse the Magma Cave and rescue Silvia without taking any damage.:::missable::5:::::00000
-111000016:"R:0xH00b3!=0_N:0xH00d2=1.1._0xM0064=1.1._N:0xH00d2=14.1._0xM0064=1.1._N:0xH00d2=18.1._0xM0064=1.1.":Tablets:Find the three tablets:::missable:marshallward:0:::::00000
+111000012:"R:0xH00d2!=10_R:0xH00ca<d0xH00ca_P:0xH00b3!=0_0x 00d5=17.1._N:0xH000d=2_T:0xM0064=1":Master Spelunker:Traverse the Magma Cave and rescue Silvia without taking any damage.:::missable::10:::::00000
+111000016:"R:0xH00b3!=0_N:0xH00d2=1.1._0xM0064=1.1._N:0xH00d2=14.1._0xM0064=1.1._N:0xH00d2=18.1._0xM0064=1.1.":Tablets:Find the three tablets:::missable:marshallward:10:::::00000
+111000018:"R:0xH00d2!=10_R:0xH00b3!=0_R:0xH0035=7_N:0xH0064=31.1._N:d0xH000d>0.1._T:0xH000d=0":Icabod Reign:Encounter Icabod and rescure the VZR-4 crew:::::5:::::00000
+111000020:"R:0xH00d2!=14_R:0xH00b3!=0_R:0xH0035=7_N:0xN0064=1_N:0xO0064=1_N:d0xH000d<1.1._T:0xH000d=1":Reunion:Defeat Icabod, then reunite with your loved ones.:::::5:::::00000
+111000022:"R:0xH00d2!=18_R:0xH00b3!=0_R:d0xH0356=255_0xN0064=1.1._N:d0xH0306<=40_T:0xH0306>128":This is for Ziggy:Find Icamod in the Underworld Empire and kill him before he escapes.:::::25:::::00000
+111000023:"R:0xH00d2!=13_R:0xH00b3!=0_R:0xH0035=7_0xH0035=3.1._N:0xH04f0=129.1._N:0xH0370=129.1._B:3_T:0xH0306>128.1.":He's more machine than man now:Talk with your team and discover the weakness of Bandal, then defeat it.:::::5:::::00000
+111000024:"R:0xH00d2!=17_R:0xH00b3!=0_R:0xH0035=7_0xH0035=3.1._N:0xH04f0=147.1._N:0xH0370=129.1._B:3_T:0xH0306>128.1.":Time to face ourselves:Talk with your team and discover the weakness of the VZR-5, then defeat it.:::::5:::::00000
