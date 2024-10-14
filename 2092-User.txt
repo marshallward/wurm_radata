@@ -4,7 +4,6 @@ N0:0x0012:"Level \"window\"?\r\nSimilar but different from 0xa-b"
 N0:0x002f:"X pos (sort of?)"
 N0:0x0030:"Y pos?"
 N0:0x0031:"Maybe X??"
-N0:0x0033:"Facing (0=right, 1=left)"
 N0:0x0034:"Level select?\r\n\r\n(Not exacty, more like 1/256 chance of being nonzero)"
 N0:0x003f:"NoMove"
 N0:0x0040:"NoMove"
@@ -13,32 +12,34 @@ N0:0x0043:"NoMove (0 to 1)"
 N0:0x0044:"State?\r\n06 = drill move back\r\n16 = stand\r\n18 = kick\r\n19 = jump\r\n1c = duck\r\n1e = run"
 N0:0x0045:"Move State? (0 or 6)"
 N0:0x0046:"NoMove (0 or 6)"
-N0:0x00c8:"Fuel/Gun (lower byte)"
-N0:0x00c9:"Fuel/Gun (upper byte)"
+N0:0x007b:"[8-bit] Trigger dialogue"
 N0:0x00ca:"[8-bit] Shield / Life"
-N0:0x0307:"Player Bullet 6"
-N0:0x0308:"Player Bullet 5"
-N0:0x0309:"Player Bullet 4"
-N0:0x030a:"Player Bullet 3"
-N0:0x030b:"Player Bullet 2"
-N0:0x030c:"Player Bullet 1\r\n\r\nSet to 0x85 when fired, but then cycles back to 0x00 (after a time I presume).\r\n\r\nA bit of a list: If 1 is occupied then the next is \"fired\".  Six shots must be the max.\r\n\r\nChanges can indicate number of shots (after dividing by two)"
+N0:0x00f5:"[8-bit] Music selection"
+N0:0x014e:"[8-bit] Reset game\r\n\r\nWriting 0 or other low bits will usually reset the game, but can also generate a crash."
+N0:0x0196:"[8-bit] NPC 1 State\r\n\r\n0x01 = Active\r\n>0x80 = Dead\r\n\r\nMost likely a bit mask, but many values are still uinclear"
+N0:0x01a6:"[8-bit] NPC 1 Tileset?"
+N0:0x02a6:"Enemy position?"
+N0:0x02d5:"[8-bit] Enemy one movement\r\n\r\nStill unclear...\r\n0x02-0x03 = Run\r\n0x05-0x06 = Jump\r\n0x0f = Fall (through the ground)"
 N0:0x04e5:"Fuel\r\n(May just be the graphic counter, not actual fuel)"
 N0:0x04f1:"Possibility / 100"
 N0:0x04f2:"Possibility / 10\r\n\r\nThis is the \"upper byte\".  It stores multiples of 10, with an 0x80 offset.\r\n\r\nSo if the possibility is 27, then this is 0x82.  (And the lower is 0x87).\r\n\r\nOddly, if the number is from 0 to 9, then this is zero, not 0x80.  Not yet sure why."
 N0:0x04f3:"[8-bit] Possibility (mod 10)\r\n\r\nThis is the \"lower byte\", except it is some kind of decimal form.  0x80 to 0x89.  Anything higher than 10 is stored in 0x04f2"
 N0:0x0780:"Enemy Sprite Position?\r\n\r\nVERY unsure about this, but it's 0xf8 if there are no enemies on screen..."
-111000014:"R:0xH00d2!=0_R:0xH00b3!=0_0x 00d5=17.1._N:0xH00de>1_R:0x 00d5>=96_N:0xH00de>1_R:0x 00d5<=80_N:d0x 00d5<0x 00fe.1._T:0x 00d5=254.1.":Way of the Drill:Complete the first VRZ level using only the T-form.  You may only use the H-form to reach the passage atop the canyon.::::marshallward:5:::::00000
-111000013:"R:0xH00d2!=1_R:0xH00b3!=0_R:0xH0035=7_0xH0035=3.1._N:0xH04f0=75.1._N:0xH0370=129.1._B:3_T:0xH0306>128.1.":Behold the Bemul:Talk with your team and discover the weakness of the Bemul, then defeat it.:::::5:::::00000
-111000015:"R:0xH00d2!=1_R:0xH00b3!=0_R:0xH0035=7_R:0xH04f0!=15_R:0xH00ca<20_0xH0035=3.1._N:0xH0370=129.1._B:3_T:0xH0306>128":Eye of the Bemulder:Defeat the Bemulder without any support from your team, and without taking any damage.  (Press Select to skip the Dialogue section.)::::marshallward:10:::::00000
-111000004:"R:0xH00d2!=2_R:0xH00b3!=0_R:0xH0035=7_N:0xH0064=7.1._N:d0xH000d>0.1._T:0xH000d=0":The Bot with the Custom CPU:Defeat Zolda, and then reactivate the G-13 robot.:::progression::5:::::00000
-111000002:"R:0xH00d2!=5_R:0xH00b3!=0_R:0xH0035=7_0xH0035=3.1._N:0xH04f0=93.1._N:0xH0370=129.1._B:3_T:0xH0306>128.1.":From Anrock to a Rock:Talk with your team and discover the weakness of Anrock, then defeat it.:::::5:::::00000
-111000007:"R:0xH00d2!=6_R:0xH00b3!=0_R:0xH0035=7_N:0xN0064=1_N:0xO0064=1_N:0xP0064=1_N:d0xH000d>0.1._T:0xH000d=0":The Legend of Zolda:Defeat Zolda again, and recruit Diane:::progression::5:::::00000
+111000014:"R:0xH00d2!=0_R:0xH00b3!=0_0x 00d5=17.1._N:0xH00de>1_R:0x 00d5>=96_N:0xH00de>1_R:0x 00d5<=80_N:d0x 00d5<0x 00fe.1._T:0x 00d5=254.1.":Way of the Drill:Complete the first VRZ level using only the T-form.  You may only use the H-form to reach the passage atop the canyon.::::marshallward:5:::::"local\\2092-c86bac4265431a01d0c883bf52bebc3b.png"
+111000013:"R:0xH00d2!=1_R:0xH00b3!=0_R:0xH0035=7_0xH0035=3.1._N:0xH04f0=75.1._N:0xH0370=129.1._B:3_T:0xH0306>128.1.":Behold the Bemul:Talk with your team and discover the weakness of the Bemul, then defeat it.:::::5:::::"local\\2092-c6f2058f7e33886cba1796929fc58542.png"
+111000015:"R:0xH00d2!=1_R:0xH00b3!=0_R:0xH0035=7_R:0xH04f0!=15_R:0xH00ca<20_0xH0035=3.1._N:0xH0370=129.1._B:3_T:0xH0306>128":Eye of the Bemulder:Defeat the Bemulder without any support from your team, and without taking any damage.  (Press Select to skip the Dialogue section.)::::marshallward:10:::::"local\\2092-e2f7ff2658cb80e12eb2ee3506c781e7.png"
+111000004:"R:0xH00d2!=2_R:0xH00b3!=0_R:0xH0035=7_N:0xH0064=7.1._N:d0xH000d>0.1._T:0xH000d=0":The Bot with the Custom CPU:Defeat Zolda, and then reactivate the G-13 robot.:::progression::5:::::"local\\2092-9a1796f1d9256663b5539c81ee9afd7b.png"
+111000027:"R:0xH00d2!=2_R:0x 00c8<d0x 00c8_R:0xH00b3!=0_0x 00d5=17.1._N:0xH000d=2_T:0xH0064=7":Leg Day:Locate G-13 in the cave without using your Tachyon gun.:::::10:::::"local\\2092-38241a4e646cd745684f62da19313718.png"
+111000002:"R:0xH00d2!=5_R:0xH00b3!=0_R:0xH0035=7_0xH0035=3.1._N:0xH04f0=93.1._N:0xH0370=129.1._B:3_T:0xH0306>128.1.":Anrock and a hard place:Talk with your team and discover the weakness of Anrock, then defeat it.:::::5:::::"local\\2092-d1502d8b811add863a3e826d6f89ecf3.png"
+111000007:"R:0xH00d2!=6_R:0xH00b3!=0_R:0xH0035=7_N:0xN0064=1_N:0xO0064=1_N:0xP0064=1_N:d0xH000d>0.1._T:0xH000d=0":The Legend of Zolda:Defeat Zolda again, and recruit Diane:::progression::5:::::"local\\2092-7061ac90cf80fbbd2e8d75fc8edcfdba.png"
+111000009:"R:0xH00d2!=6_R:0xH00b3!=0_R:d0xH0356=255_0xN0064=1.1._N:d0xH0306<=16_T:0xH0306>128":Zolda's Last Stand:Kill Zolda in your final battle before he escapes.:::missable::10:::::"local\\2092-3986bb998b4df24415087c64b9abc237.png"
 111000025:"R:0xH00d2!=9_R:0xH00b3!=0_R:0xH0035=7_0xH0035=3.1._N:0xH04f0=111.1._N:0xH0370=129.1._B:3_T:0xH0306>128.1.":Zalta vs Vazolder:Talk with your team and discover the weakness of the Zalda, then defeat it.:::::5:::::00000
-111000009:"R:0xH00d2!=6_R:0xH00b3!=0_R:d0xH0356=255_0xN0064=1.1._N:d0xH0306<=16_T:0xH0306>128":Zolda's Last Stand:Kill Zolda in your final battle before he escapes.:::missable::10:::::00000
-111000012:"R:0xH00d2!=10_R:0xH00ca<d0xH00ca_P:0xH00b3!=0_0x 00d5=17.1._N:0xH000d=2_T:0xM0064=1":Master Spelunker:Traverse the Magma Cave and rescue Silvia without taking any damage.:::missable::10:::::00000
+111000012:"R:0xH00d2!=10_R:0xH00ca<d0xH00ca_R:0xH00b3!=0_0x 00d5=17.1._N:0xH000d=2_T:0xM0064=1":Master Spelunker:Traverse the Magma Cave and rescue Silvia without taking any damage.:::missable::10:::::"local\\2092-ffe4c19a927b430bc07dde7cbcc83577.png"
+111000018:"R:0xH00d2!=10_R:0xH00b3!=0_R:0xH0035=7_N:0xH0064=31.1._N:d0xH000d>0.1._T:0xH000d=0":Icabod Reign:Encounter Icabod and rescue the VZR-4 crew:::::5:::::00000
 111000023:"R:0xH00d2!=13_R:0xH00b3!=0_R:0xH0035=7_0xH0035=3.1._N:0xH04f0=129.1._N:0xH0370=129.1._B:3_T:0xH0306>128.1.":He's more machine than man now:Talk with your team and discover the weakness of Bandal, then defeat it.:::::5:::::00000
-111000018:"R:0xH00d2!=10_R:0xH00b3!=0_R:0xH0035=7_N:0xH0064=31.1._N:d0xH000d>0.1._T:0xH000d=0":Icabod Reign:Encounter Icabod and rescure the VZR-4 crew:::::5:::::00000
-111000020:"R:0xH00d2!=14_R:0xH00b3!=0_R:0xH0035=7_N:0xN0064=1_N:0xO0064=1_N:d0xH000d<1.1._T:0xH000d=1":Reunion:Defeat Icabod, then reunite with your loved ones.:::::5:::::00000
-111000024:"R:0xH00d2!=17_R:0xH00b3!=0_R:0xH0035=7_0xH0035=3.1._N:0xH04f0=147.1._N:0xH0370=129.1._B:3_T:0xH0306>128.1.":Time to face ourselves:Talk with your team and discover the weakness of the VZR-5, then defeat it.:::::5:::::00000
+111000020:"R:0xH00d2!=14_R:0xH00b3!=0_R:0xH0035=7_N:0xN0064=1_N:0xO0064=1_N:d0xH000d<1.1._T:0xH000d=1":Reunion:Defeat Icabod, then reunite with your loved ones.:::::5:::::"local\\2092-672b762bc76cee8a3ce0a72a34d3ad84.png"
+111000024:"R:0xH00d2!=17_R:0xH00b3!=0_R:0xH0035=7_0xH0035=3.1._N:0xH04f0=147.1._N:0xH0370=129.1._B:3_T:0xH0306>128.1.":Our own worst enemy:Talk with your team and discover the weakness of the VZR-5, then defeat it.:::::5:::::00000
 111000022:"R:0xH00d2!=18_R:0xH00b3!=0_R:d0xH0356=255_0xN0064=1.1._N:d0xH0306<=40_T:0xH0306>128":This is for Ziggy:Find Icamod in the Underworld Empire and kill him before he escapes.:::::25:::::00000
-111000016:"R:0xH00b3!=0_N:0xH00d2=1.1._0xM0064=1.1._N:0xH00d2=14.1._0xM0064=1.1._N:0xH00d2=18.1._0xM0064=1.1.":Tablets:Find the three tablets:::missable:marshallward:10:::::00000
+111000026:"R:0xH00d2!=19_R:0xH00b3!=0_R:0xH0035=7_0xH0035=3.1._N:0xH04f0=93.1._N:0xH0370=129.1._B:3_T:0xH0306>128.1.":Soglaz:Defeat Soglaz and awaken the statue.:::win_condition::5:::::00000
+111000016:"R:0xH00b3!=0_N:0xH00d2=6.1._0xM0064=1.1._N:0xH00d2=14.1._0xM0064=1.1._N:0xH00d2=18.1._0xM0064=1.1.":The Lemurian Trilogy:Find the three tablets:::missable:marshallward:10:::::"local\\2092-ac6acdb06977b4da6d33a837680122a6.png"
+111000028:"R:0xH00d2!=7_R:0xH00b3!=0_R:0xH0035=7_P:0xH0038>0_N:0xH01a1=19_C:d0xH0191>128.5._N:0xH01a2=19_C:d0xH0192>128.5._N:0xH01a3=19_C:d0xH0193>128.5._N:0xH01a4=19_C:d0xH0194>128.5._N:0xH01a5=19_C:d0xH0195>128.5._N:0xH01a6=19_M:d0xH0196>128.5.":Bring Forth the Mollusk:Defeat all five Znail (Monai) in the Subterranean Jungle:::::10:::::00000

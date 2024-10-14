@@ -64,5 +64,6 @@ Lookup:Scene
 
 Display:
 ?0x000d=6?The Journey Begins
-?0x000d=1?The Story Unfolds
+// Cutscenes require more context; for now, leave it generic
+?0x000d=1?(@Level(0xh00d2)) The Story Unfolds
 @Paused(0xh0038) (@Level(0xh00d2)) Moby is@Enemy(0xh00d2) @Scene(0xh00d2).
