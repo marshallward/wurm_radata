@@ -14,15 +14,15 @@ N0:0x0045:"Move State? (0 or 6)"
 N0:0x0046:"NoMove (0 or 6)"
 N0:0x007b:"[8-bit] Trigger dialogue"
 N0:0x00ca:"[8-bit] Shield / Life"
-N0:0x00f5:"[8-bit] Music selection"
+N0:0x00f5:"[8-bit] Music selection\r\n\r\nWriting to this address will select a music track.  Unused during gameplay."
 N0:0x014e:"[8-bit] Reset game\r\n\r\nWriting 0 or other low bits will usually reset the game, but can also generate a crash."
-N0:0x0196:"[8-bit] NPC 1 State\r\n\r\n0x01 = Active\r\n>0x80 = Dead\r\n\r\nMost likely a bit mask, but many values are still uinclear"
 N0:0x02a6:"Enemy position?"
 N0:0x02d5:"[8-bit] Enemy one movement\r\n\r\nStill unclear...\r\n0x02-0x03 = Run\r\n0x05-0x06 = Jump\r\n0x0f = Fall (through the ground)"
 N0:0x04e5:"Fuel\r\n(May just be the graphic counter, not actual fuel)"
 N0:0x04f1:"Possibility / 100"
 N0:0x04f2:"Possibility / 10\r\n\r\nThis is the \"upper byte\".  It stores multiples of 10, with an 0x80 offset.\r\n\r\nSo if the possibility is 27, then this is 0x82.  (And the lower is 0x87).\r\n\r\nOddly, if the number is from 0 to 9, then this is zero, not 0x80.  Not yet sure why."
 N0:0x04f3:"[8-bit] Possibility (mod 10)\r\n\r\nThis is the \"lower byte\", except it is some kind of decimal form.  0x80 to 0x89.  Anything higher than 10 is stored in 0x04f2"
+N0:0x04f8:"[16-bit BE] V Bonus Item Counter\r\n\r\nTimer for the V (invincibility) bonus  The \"hit\" invincibility counter drops from 0x10 to 0x0c then stops.  Next, 0x04f8 is set to 0x04ff and counts down to zero.  After that, 0x0310 resumes its down down to 0x00 and invincibility ends.\r\n\r\nSo this is like a \"pause\" of 0x4000 cycles while the 0x0310 counter sits at 0x0a.\r\n\r\n(Byte 0x04f8 is also used in cutscenes for some unclear purpose.)"
 N0:0x0780:"Enemy Sprite Position?\r\n\r\nVERY unsure about this, but it's 0xf8 if there are no enemies on screen..."
 111000014:"R:0xH00d2!=0_R:0xH00b3!=0_0x 00d5=17.1._N:0xH00de>1_R:0x 00d5>=96_N:0xH00de>1_R:0x 00d5<=80_N:d0x 00d5<0x 00fe.1._T:0x 00d5=254.1.":Way of the Drill:Complete the first VRZ level using only the T-form.  You may only use the H-form to reach the passage atop the canyon.::::marshallward:5:::::"local\\2092-c86bac4265431a01d0c883bf52bebc3b.png"
 111000013:"R:0xH00d2!=1_R:0xH00b3!=0_R:0xH0035=7_0xH0035=3.1._N:0xH04f0=75.1._N:0xH0370=129.1._B:3_T:0xH0306>128.1.":Behold the Bemul:Talk with your team and discover the weakness of the Bemul, then defeat it.:::::5:::::"local\\2092-c6f2058f7e33886cba1796929fc58542.png"
@@ -33,7 +33,7 @@ N0:0x0780:"Enemy Sprite Position?\r\n\r\nVERY unsure about this, but it's 0xf8 i
 111000029:"R:0xH00d2!=5_R:0xH00b3!=0_R:0xH0035=7_N:0xH01a6!=12_N:0xH01a6!=13_N:0xH01a6!=14_P:0xH01a6!=15_P:d0xH0196!=131_O:0xH01a6=12.1._0xH01a6=13.1._O:0xH01a6=14.1._0xH01a6=15.1.":Took an arm and a leg:Successfully hit an arm and a leg during Anrock's attack.:::::5:::::"local\\2092-e7d6300e48ff1b3820fede8821075434.png"
 111000007:"R:0xH00d2!=6_R:0xH00b3!=0_R:0xH0035=7_N:0xN0064=1_N:0xO0064=1_N:0xP0064=1_N:d0xH000d>0.1._T:0xH000d=0":The Legend of Zolda:Defeat Zolda again, and recruit Diane.:::progression::5:::::"local\\2092-7061ac90cf80fbbd2e8d75fc8edcfdba.png"
 111000009:"R:0xH00d2!=6_R:0xH00b3!=0_R:0xH0035=7_0xN0064=1.1._N:d0xH0306<=16_R:d0xH0196=0_N:0xH01a6=10_T:0xH0306>128":Zolda's Last Stand:Kill Zolda in your final battle before he escapes.:::missable::10:::::"local\\2092-3986bb998b4df24415087c64b9abc237.png"
-111000028:"R:0xH00d2!=7_R:0xH00b3!=0_R:0xH0035=7_P:0xH0038>0_N:0xH01a1=19_C:d0xH0191>128.8._N:0xH01a2=19_C:d0xH0192>128.8._N:0xH01a3=19_C:d0xH0193>128.8._N:0xH01a4=19_C:d0xH0194>128.8._N:0xH01a5=19_C:d0xH0195>128.8._N:0xH01a6=19_M:d0xH0196>128.8.":Bring forth the Mollusk:Defeat all eight Znail (Monai) in the Subterranean Jungle.:::::10:::::00000
+111000028:"R:0xH00d2!=7_R:0xH00b3!=0_R:0xH0035=7_P:0xH0038>0_N:0xH01a1=19_C:d0xH0191>128.8._N:0xH01a2=19_C:d0xH0192>128.8._N:0xH01a3=19_C:d0xH0193>128.8._N:0xH01a4=19_C:d0xH0194>128.8._N:0xH01a5=19_C:d0xH0195>128.8._N:0xH01a6=19_M:d0xH0196>128.8.":Bring forth the Mollusk:Defeat all eight Znail in the Subterranean Jungle.:::::10:::::00000
 111000025:"R:0xH00d2!=9_R:0xH00b3!=0_R:0xH0035=7_0xH0035=3.1._N:0xH04f0=111.1._N:0xH0370=129.1._B:3_T:0xH0306>128.1.":Zalta vs Vazolder:Talk with your team and discover the weakness of the Zalda, then defeat it.:::::5:::::00000
 111000012:"R:0xH00d2!=10_R:0xH00ca<d0xH00ca_R:0xH00b3!=0_0x 00d5=17.1._N:0xH000d=2_T:0xM0064=1":Master Spelunker:Traverse the Magma Cave and rescue Silvia without taking any damage.:::missable::10:::::"local\\2092-ffe4c19a927b430bc07dde7cbcc83577.png"
 111000018:"R:0xH00d2!=10_R:0xH00b3!=0_R:0xH0035=7_N:0xH0064=31.1._N:d0xH000d>0.1._T:0xH000d=0":Icabod Reign:Encounter Icabod and rescue the VZR-4 crew.:::::5:::::00000
@@ -41,6 +41,7 @@ N0:0x0780:"Enemy Sprite Position?\r\n\r\nVERY unsure about this, but it's 0xf8 i
 111000020:"R:0xH00d2!=14_R:0xH00b3!=0_R:0xH0035=7_N:0xN0064=1_N:0xO0064=1_N:d0xH000d<1.1._T:0xH000d=1":Reunion:Defeat Icabod, then reunite with your loved ones.:::::5:::::"local\\2092-672b762bc76cee8a3ce0a72a34d3ad84.png"
 111000024:"R:0xH00d2!=17_R:0xH00b3!=0_R:0xH0035=7_0xH0035=3.1._N:0xH04f0=147.1._N:0xH0370=129.1._B:3_T:0xH0306>128.1.":Our own worst enemy:Talk with your team and discover the weakness of the VZR-5, then defeat it.:::::5:::::00000
 111000031:"R:0xH00d2!=18_R:0xH00b3!=0_R:0xH0035=7_0xN0064=1.1._N:d0xH0306<40_R:d0xH0196=0_N:0xH01a6=12_T:0xH0306>128":This is for Ziggy:Find Icamod in the Underworld Empire and kill him before he escapes.:::::25:::::"local\\2092-cb8ce3f17fcf0331a3de49b704b047e0.png"
-111000026:"R:0xH00d2!=19_R:0xH00b3!=0_R:0xH0035=7_0xH0035=3.1._N:0xH04f0=93.1._N:0xH0370=129.1._B:3_T:0xH0306>128.1.":Sogalz:Defeat Soglaz and awaken the statue.:::win_condition::5:::::00000
+111000026:"R:0xH00d2!=19_R:0xH00b3!=0_R:0xH0035=7_0xH0035=3.1._N:0xH04f0=93.1._N:0xH0370=129.1._B:3_T:0xH0306>128.1.":Peace under earth:Defeat Soglaz and awaken the statue.:::win_condition::5:::::00000
 111000016:"R:0xH00b3!=0_N:0xH00d2=6.1._0xM0064=1.1._N:0xH00d2=14.1._0xM0064=1.1._N:0xH00d2=18.1._0xM0064=1.1.":The Lemurian Trilogy:Find the three tablets.:::missable:marshallward:10:::::"local\\2092-ac6acdb06977b4da6d33a837680122a6.png"
-111000032:"R:0xH00b3!=0_R:0xH0035=9_R:0xH0035=7_N:d0xH00d2=2.1._N:d0xH0035=27.1._0xH0035=13.1._N:d0xH00d2=6.1._N:d0xH0035=27.1._0xH0035=13.1._N:d0xH00d2=10.1._N:d0xH0035=27.1._0xH0035=13.1._N:d0xH00d2=14.1._N:d0xH0035=27.1._0xH0035=13.1._N:d0xH00d2=18.1._N:d0xH0035=27.1._0xH0035=13.1.":Super good player:Complete the game without any continues.::::marshallward:25:::::00000
+111000033:"R:0xH00b3!=0_R:0xH0035=9_R:0xH0035=7_0xI04f8!=1279":V-ery nice:Find and collect a V invincibility powerup.::::marshallward:5:::::"local\\2092-02fdc713077240d72b63a8b2446c5743.png"
+111000032:"R:0xH00b3!=0_R:0xH0035=9_R:0xH0035=7_N:d0xH00d2=2.1._N:d0xH0035=27.1._0xH0035=13.1._N:d0xH00d2=6.1._N:d0xH0035=27.1._0xH0035=13.1._N:d0xH00d2=10.1._N:d0xH0035=27.1._0xH0035=13.1._N:d0xH00d2=14.1._N:d0xH0035=27.1._0xH0035=13.1._N:d0xH00d2=18.1._N:d0xH0035=27.1._0xH0035=13.1.":Master VZR Chief:Complete the game without any continues.::::marshallward:25:::::"local\\2092-db4c938635ebe71e15a529226411b14e.png"
