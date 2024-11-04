@@ -29,7 +29,7 @@ Lookup:Enemy
 1= fighting the Bemul
 5= fighting the Anrock
 9= fighting Zalta
-13= fighting Bandal
+13= fighting Vandal
 17= fighting the VZR-5
 19= fighting Sogalz
 
